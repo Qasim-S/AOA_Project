@@ -1,1 +1,30 @@
+# pseudocode for the project
 
+Assuming a dictionary of words has been provided with a function search for searching the word and returning its translation.
+
+INPUT: an input string "s"
+OUTPUT: a translated string "translatedText"
+Translator(s)
+	# counting number of words
+	wordCount = loopCount = 0
+	while(s[loopCount] != '\0')
+		if(s[loopCount] = ' ')
+			wordCount = wordCount + 1
+		loopCount = loopCount + 1
+	
+	# creating an array of size wordCount
+	translatedText[wordCount]
+
+	wordCount = loopCount = 0
+	word = ""
+	while(s[loopCount] != '\0')
+		word = word + s[loopCount]
+		if(s[loopCount] = ' ')
+			
+			# search for the translation in the dictionary
+			translatedWord = dictionary.search(word)
+			translatedText[wordCount] = translatedWord
+
+		loopCount = loopCount + 1
+
+	return translatedText
