@@ -27,4 +27,5 @@ Translator(s)
 
 		loopCount = loopCount + 1
 
+	# some sort of correctness for order needs to applied to "translatedText" before return because English and Urdu have different sentence structures
 	return translatedText
