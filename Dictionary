@@ -1,1 +1,42 @@
-
+class Dictionary
+{
+  private var $dict = array();
+  
+  public function _construct($dataset){
+    $this->$dict = $dataset;
+    sort($this->$dict);
+  }
+  
+  private function binarySearch($arr, $x) 
+  {
+    if (count($arr) === 0) return false; 
+    $low = 0; 
+    $high = count($arr) - 1;  
+    while ($low <= $high) { 
+        $mid = floor(($low + $high) / 2); 
+        if($arr[$mid][0] == $x) { 
+            return $mid; 
+        }   
+        if ($x < $arr[$mid][0]) {            
+            $high = $mid -1; 
+        } 
+        else {             
+            $low = $mid + 1; 
+        } 
+    }    
+    return false; 
+  } 
+  
+  public search($word){
+    $word = strtolower($word);
+    $translated = array(0, 0);
+    $loopCount = 0;
+    $key = binarySearch($this->$dict, $word);
+    if(!$key){
+      return $translated;
+    }
+    $translated[0] = $this->$dict[$key][1];
+    $translated[1] = $this->$dict[$key][2];
+    return $translated;
+  }
+}
