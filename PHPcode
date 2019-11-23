@@ -14,7 +14,13 @@ fucntion Translator($s, $dict){
     if($s[loopCount] == ' '){
       
       list($translatedWord, $partOfSpeech) = $dict->search($wordToBeTranslated);
-      array_push($translatedText, array($translatedWord, $partOfSpeech);
+      
+      if($translatedWord == 0){
+        return "Text contains unfamiliar words!";
+      }
+      else{
+        array_push($translatedText, array($translatedWord, $partOfSpeech));
+      }
       
     }
     
