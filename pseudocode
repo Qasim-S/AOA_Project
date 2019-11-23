@@ -13,6 +13,8 @@ Translator(s)
 		loopCount = loopCount + 1
 	
 	# creating an array of size wordCount
+	# this array will store tuples of the form
+	# (translation, part of speech)
 	translatedText[wordCount]
 
 	wordCount = loopCount = 0
@@ -20,10 +22,13 @@ Translator(s)
 	while(s[loopCount] != '\0')
 		word = word + s[loopCount]
 		if(s[loopCount] = ' ')
-			
 			# search for the translation in the dictionary
-			translatedWord = dictionary.search(word)
-			translatedText[wordCount] = translatedWord
+			# search function will cut additional spaces at the end of the word,
+			# provide translation and identify part of speech
+			# it will return a tuple
+			# (translation, part of speech)
+			translatedWord, part_of_speech = dictionary.search(word)
+			translatedText[wordCount] = (translatedWord, part_of_speech)
 
 		loopCount = loopCount + 1
 
