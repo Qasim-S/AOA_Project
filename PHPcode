@@ -1,1 +1,29 @@
 
+fucntion Translator($s, $dict){
+
+  $translatedText = array();
+  
+  $loopCount = 0;
+  
+  $wordToBeTranslated = "";
+  
+  while(loopCount <= strlen($s)){
+  
+    $wordToBeTranslated = $wordToBeTranslated.$s[loopCount];
+    
+    if($s[loopCount] == ' '){
+      
+      list($translatedWord, $partOfSpeech) = $dict->search($wordToBeTranslated);
+      array_push($translatedText, array($translatedWord, $partOfSpeech);
+      
+    }
+    
+    $loopCount++;
+    
+  }
+  
+  $actualTranslation = orderCorrector($translatedText);
+  
+  return $actualTranslation;
+  
+}
